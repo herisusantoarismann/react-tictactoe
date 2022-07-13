@@ -4,7 +4,7 @@ import Square from "./Square";
 const Board = () => {
   return (
     <div className="board">
-      <Square />
+      <Square player={currentPlayer} />
       <Square />
       <Square />
       <Square />
