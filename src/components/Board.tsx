@@ -23,6 +23,15 @@ const Board = () => {
   const [winner, setWinner] = React.useState<string>("");
 
   const onChangePlayer = (index: number) => {
+    if (squares[index]) {
+      alert("This box is already filled.");
+      return;
+    }
+    if (winner) {
+      alert("Please reset the game first.");
+      return;
+    }
+
     setSquares((prevState) => ({
       ...prevState,
       [index]: currentPlayer,
@@ -32,11 +41,29 @@ const Board = () => {
       : setCurrentPlayer(players[0]);
   };
 
-  React.useEffect(() => {
+  const checkWinner = () => {
     for (let i = 0; i < winningCondition.length; i++) {
       const [a, b, c] = winningCondition[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
-        return setWinner(squares[a]);
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        setWinner(squares[a]);
+
+        return squares[a];
+      }
+    }
+
+    return false;
+  };
+
+  React.useEffect(() => {
+    if (squares) {
+      const w = checkWinner();
+      if (w) {
+        alert(`The winner is ${w}`);
+      }
     }
   }, [squares]);
 
@@ -48,6 +75,7 @@ const Board = () => {
 
   return (
     <>
+      <p className="winner-name">The winner is {winner}</p>
       <div className="board">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -59,6 +87,7 @@ const Board = () => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <button>Reset Game</button>
     </>
   );
 };
