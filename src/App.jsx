@@ -1,13 +1,14 @@
 import React from "react";
 import Board from "./components/Board";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <div className="container">
-      <header>
-        <h1>React Tic-tac-toe</h1>
-      </header>
+      <Header />
       <Board />
+      <Footer />
     </div>
   );
 };
