@@ -58,6 +58,16 @@ const Board = () => {
     return false;
   };
 
+  const resetGame = () => {
+    setWinner("");
+    setSquares({});
+    setCurrentPlayer(players[0]);
+  };
+
+  React.useEffect(() => {
+    document.title = "React Tic-Tac-Toe";
+  }, []);
+
   React.useEffect(() => {
     if (squares) {
       const w = checkWinner();
@@ -87,7 +97,9 @@ const Board = () => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
-      <button>Reset Game</button>
+      <div className="resetButton">
+        <button onClick={() => resetGame()}>Reset Game</button>
+      </div>
     </>
   );
 };
