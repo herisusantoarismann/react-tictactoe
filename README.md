@@ -32,7 +32,7 @@
 
 ## About The Project
 
-![Tic-Tac-Toe App](https://github.com/herisusantoarismann/next-translation/blob/master/Screenshot.png)
+![Tic-Tac-Toe App](https://github.com/herisusantoarismann/react-tictactoe/blob/master/Screenshot.png)
 
 Here is a screenshot of the application. Contains quizzes about various special or random things.
 
