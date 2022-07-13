@@ -6,8 +6,10 @@ import Header from "./components/Header";
 const App = () => {
   return (
     <div className="container">
-      <Header />
-      <Board />
+      <div>
+        <Header />
+        <Board />
+      </div>
       <Footer />
     </div>
   );
