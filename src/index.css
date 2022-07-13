@@ -33,6 +33,10 @@ header > h1 {
   border: 1px solid black;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.square:hover {
+  background-color: #e7e9e6;
 }
 .square > p {
   font-size: 1em;

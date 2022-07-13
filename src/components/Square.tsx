@@ -1,9 +1,14 @@
 import React from "react";
 
-const Square = () => {
+type Props = {
+  state: string;
+  onClick: (index: number) => void;
+};
+
+const Square = ({ state, onClick }: Props) => {
   return (
-    <div className="square">
-      <p>X</p>
+    <div className="square" onClick={() => onClick(0)}>
+      <p>{state}</p>
     </div>
   );
 };

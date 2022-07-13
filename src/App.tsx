@@ -4,8 +4,6 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 const App = () => {
-  const [currentPlayer, setCurrentPlayer] = React.useState<string>("");
-
   return (
     <div className="container">
       <div>
